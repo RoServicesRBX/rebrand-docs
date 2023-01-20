@@ -1,0 +1,36 @@
+site_name: RoServices Documentation
+
+theme:
+  name: material
+nav:
+    - Home: index.md
+    - Getting Started: 
+      - Dashboard Setup: Setup/Dashboard.md
+
+    - Template Configuration:
+      - Rank Center: Setup/RankCenter.md
+      - Application Center: Setup/ApplicationCenter.md
+
+    - API:
+      - Demote: API/Demote.md
+      - Promote: API/Promote.md
+      - HandleRequest: API/HandleRequest.md
+      - SetRank: API/Setrank.md
+      - Shout: API/Shout.md
+    
+    - Discord Bot Examples:
+      - Simple d.py bot: BotExamples/dpy.md
+plugins:
+  - tags
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - def_list
+  - meta
+
