@@ -2,6 +2,10 @@ site_name: RoServices Documentation
 
 theme:
   name: material
+  features:
+    - navigation.footer
+    - navigation.top
+
 nav:
     - Home: index.md
     - Getting Started: 
@@ -12,6 +16,7 @@ nav:
       - Application Center: Setup/ApplicationCenter.md
 
     - API:
+      - API Guide: API/APIguide.md
       - Demote: API/Demote.md
       - Promote: API/Promote.md
       - HandleRequest: API/HandleRequest.md
@@ -20,8 +25,10 @@ nav:
     
     - Discord Bot Examples:
       - Simple d.py bot: BotExamples/dpy.md
+
 plugins:
   - tags
+  - search
 
 markdown_extensions:
   - tables
@@ -33,4 +40,12 @@ markdown_extensions:
   - attr_list
   - def_list
   - meta
+  - md_in_html
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord 
+      link: https://discord.com/invite/s8sftcd7uF
+
+copyright: Copyright &copy; 2023 RoServices
 
