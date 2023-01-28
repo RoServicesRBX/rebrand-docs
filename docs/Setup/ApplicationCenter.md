@@ -42,20 +42,19 @@ The application center is a very customizable and user friendly system which all
 
      *What it should look like when you open it:*
 
-    ![alt text](https://cdn.discordapp.com/attachments/600049019800256564/1065453109603729521/1mKlFIicwe.png "This is what it should look like when you open it")
+    ![alt text](https://cdn.discordapp.com/attachments/600049019800256564/1068972462005551254/w3o31YK6hT.png "This is what it should look like when you open it")
 
     <span style="color:#9966ff"> **Now, publish the game and turn on HTTP Requests, third party teleports, and studio api (optional)** </span>
 
-
-    Once you've done that, head over to the Explorer tab and click the little arrow next to **ServerScriptService** and double click the module named **Configuration**.
+    Once you've done that, head over to the Explorer tab and click the little arrow next to **ServerScriptService**, open the **RemoteEvents** folder then and double click the script called **APIHandler**.
     
-    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1065461955961307146/Q4pS6839sl.png)
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068961783555043439/khjIufIcxM.png)
 
-    **When you open the module, you should see this. Here is where all of the configuration for the App Center is done.**
+    **When you open the script, you should see this. This is where all of the basic configuation is done.**
 
-    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1065462239450120252/jrmk2CYUPa.png)
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068971377727651993/aZJz6x5LCJ.png)
 
-    
+
     ??? Info "Getting group ID + setting variable"
         1. Head to your group on the ROBLOX page. 
 
@@ -71,28 +70,55 @@ The application center is a very customizable and user friendly system which all
 
         *You're now done with that!**
         
-    <span style="color:#9966ff"> **Group Variable** </span>:
+    <span style="color:#9966ff"> **groupID Variable** </span>:
     - The group Variable is used to define what group this rank center is for. Remove the numbers that are in it and replace it with your group ID. (Click the *Click to see* arrow below)
 
-    <span style="color:#9966ff"> **GameKey Variable** </span>:
-    - The game key variable is set the place ID. DO NOT CHANGE THIS.
+    <span style="color:#9966ff"> **gameKey Variable** </span>:
+    - Copy & Paste your gamekey (obtained in the dashboard) into there.
 
-    <span style="color:#9966ff"> **Lives Variable** </span>:
-    - This variable is basically the number of questions a user can get wrong before they fail. By default it is set to 3, but you're able to make it whatever you want. 
-
-    <span style="color:#9966ff"> **PassRank Variable** </span>:
+    <span style="color:#9966ff"> **rankID Variable** </span>:
     - This variable is the rank the user will get once they pass the application. 
 
-    <span style="color:#9966ff"> **Amount Variable** </span>:
-    - This variable is the amount of question in the application. Be sure that it matches the amount of questions you have inside of the `questions` dictionary. 
+    <span style="color:#9966ff"> **successMessage Variable** </span>:
+    - Set the message you want to say after a user has passed the application.
 
+    **To change how many lives you get in the application, change this INT value located in StarterGui under the Values folder in the screenGUI.**
+    
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068975680685084692/mtZKwFHSx3.png)
+
+    !!! Success "End of APIHandler Setup"
 ---
+## **Question Setup**
+
+??? Abstract "Configuration (Module)"
+
+    To configure the Application questions & some UI elements, head to **ReplicatedStorage**, open the **Modules** folder -> **UI_Settings** -> **Core**
+
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068965235102322788/AqnxDEFQJ5.png)
+
+    **After opening the Module, you should see something similar to this**
+
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068965808673390624/dmy2dQyqri.png)
+
+    Start by putting your group name and center name into these fields. If you want **Dark** theme, put "Dark" in the theme value. Otherwise, leave it blank if you're making your own UI.
+
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068974152293298176/PLNqQSg6nH.png)
+
+    Then Start Configuring the questions.
+
+    Things to remember:
+
+    - Adjust the **Amount Variable** to how many questions you have
+    - All Questions **require** 4 answer choices
+    - Change the number after "Question" to the question number.
+
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068967448881156256/3AzwDHi4EE.png)
 
 ??? Example "Adding Questions"
 
     Adding and removing questions is a very basic process. In order to do this, find the questions dictionary, it should look like this:
 
-    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1065464252690862100/Vf1gSLvnMx.png)
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068968379966304317/QNKb6C3lxp.png)
 
     **By default the application center comes with three pre-made questions. Replace each value with whatever you want for it.**
 
@@ -104,7 +130,7 @@ The application center is a very customizable and user friendly system which all
 
     **Adding questions**
 
-    To add a question, copy one of the question dictionaries, and paste it after an };. Then change the question number to the question it is.
+    To add a question, copy one of the question dictionaries, and paste it after an };. Then change the question number to the question it is. (Remember to change the total number of questions as well!)
 
     ```lua
     Question1 = {
@@ -117,11 +143,17 @@ The application center is a very customizable and user friendly system which all
             };
     ```
 
-    ![Gif](https://cdn.discordapp.com/attachments/600049019800256564/1065465695325917244/ssd.gif)
+    ![Gif](https://cdn.discordapp.com/attachments/600049019800256564/1068968057562742864/appgif.gif)
 
 ??? Example "Removing Questions"
 
     To remove questions, its pretty simple. Do the exact same thing as adding a question, except delete the question. 
 
-    ![Gif](https://cdn.discordapp.com/attachments/600049019800256564/1065466566709362718/ss2.gif)
+    ![Gif](https://cdn.discordapp.com/attachments/600049019800256564/1068968792841003058/app2.gif)
 --- 
+
+??? Abstract "UI Configuration"
+
+    Like many others, we believe that the ability to customize things to your personal liking is an absolute. Our Application Centers allow you to adjust or even redesign the template UI. To get started go **StarterGUI** and open up the ScreenGUI. Feel free to do whatever you want.
+
+    ![alt](https://cdn.discordapp.com/attachments/600049019800256564/1068975083051294871/byezalbyr6.png)
