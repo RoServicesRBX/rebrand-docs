@@ -16,12 +16,18 @@ nav:
       - Application Center: Setup/ApplicationCenter.md
 
     - API:
+      - Explanations:
+        - Exile: API/Explanations/Exile.md
       - API Guide: API/APIguide.md
-      - Demote: API/Demote.md
-      - Promote: API/Promote.md
-      - HandleRequest: API/HandleRequest.md
-      - SetRank: API/Setrank.md
-      - Shout: API/Shout.md
+      - Ranking:
+        - Demote: API/Ranking/Demote.md
+        - Promote: API/Ranking/Promote.md
+        - HandleRequest: API/Ranking/HandleRequest.md
+        - SetRank: API/Ranking/Setrank.md
+        - Shout: API/Ranking/Shout.md
+        - Exile: API/Ranking/Exile.md
+      - Tokens: 
+        - Token Generation: API/Tokens/GenToken.md
     
     - Discord Bot Examples:
       - Simple d.py bot: BotExamples/dpy.md

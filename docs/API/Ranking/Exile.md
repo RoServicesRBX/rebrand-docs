@@ -2,7 +2,9 @@
 
 ```/api/ranking/exile/```
 
-This endpoint exiled the specified user.
+This endpoint exiles the specified user.
+
+You need to open a ticket in our [Discord server](https://roservices.app/discord) to request the exile endpoint be enabled for your group.
 
 ## Request Body
 
@@ -12,4 +14,6 @@ This endpoint exiled the specified user.
 | `groupId`    | The group which the user is in | `INTEGER` | 
 | `token`    | Exile token | `STRING` | 
 
+[How do I generate exile tokens?](/API/Tokens/GenToken/)  
+[How does exile work?](/API/Explanations/Exile/)
 

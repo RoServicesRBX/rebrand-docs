@@ -8,7 +8,7 @@ All endpoints have the base URL of [https://api.roservices.app](https://api.rose
 
 The header of `key`: (gamekey) is needed to access the API.
 
-### API End Points
+### API Ranking End Points
 
 !!! Info "/api/ranking/demote/"
 
@@ -19,4 +19,12 @@ The header of `key`: (gamekey) is needed to access the API.
 !!! Info "/api/ranking/setrank/"
 
 !!! Info "/api/ranking/shout/"
+
+!!! Info "/api/ranking/exile/"
+
+### Token End Points
+
+!!! Info "/api/tokens/generate/"
+
+
 
